@@ -1,0 +1,12 @@
+# Battle Royale and Explore 5 Maps refresh
+
+Edited with the built-in image generation tool and exported as 1600 × 600 JPEGs.
+
+## Battle Royale
+
+Lightly improve reference 1, the existing FF Esports BATTLE ROYALE home banner. Preserve its 1600 × 600 (8:3) full-bleed format, actual recognizable Bermuda Clock Tower plaza from reference 2, dramatic natural sunset, original small parachuting silhouette, amber and graphite palette, and premium tournament energy. Refine the layout: simplify the small top FF Esports wordmark into tasteful plain text 'FF ESPORTS' or omit it. Keep the main title exactly 'BATTLE ROYALE' and the gold CTA exactly 'JOIN NOW'. Replace the existing supporting sentence with exactly 'SOLO · DUO · SQUAD' in one easy-to-read uppercase row with subtle amber separators. Keep the text on a dark quiet left area with generous margins, all text at least 11% of canvas width in from left edge. Slightly sharpen and polish the highlights on the actual buildings, retain the layout and proportions of the real Clock Tower structures, keep readable foreground and luminous dark contrast. No new characters, no maps swapped, no weapons, no extra wording, no publisher logo, no watermark. Strong crisp typography visible at mobile display height.
+
+## Explore 5 Maps
+
+Make a precise refinement of this existing FF Esports map banner. Keep exactly the same five individual map images, order and landmarks from the reference, use the existing reference images as the exact tile crops, do not substitute a different map or change their depicted architecture. Keep the official map titles in exactly this order and spelling: 'BERMUDA', 'PURGATORY', 'KALAHARI', 'NEXTERRA', 'SOLARA'. Exact headline 'EXPLORE 5 MAPS' and exact button 'VIEW MATCHES'. Update the visual layout slightly: inset the entire row to span only central 78% of the ultrawide canvas, with even gaps, consistent aligned card sizes, and generous 11% left and right safety margins so the outer two cards survive a mobile center crop. Brushed dark evergreen graphite background with less gold ornamentation, thin warm gold card frames, larger white map captions and calmer shadows. Keep enough size and contrast to be readable at 180px display height. Preserve five distinctive scenes in their exact positions with no duplicates. Centered title, one row, centered CTA. Full-bleed 8:3 1600 × 600, professional tournament-app quality, no logo, watermark or extra wording.
+

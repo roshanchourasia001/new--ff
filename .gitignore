@@ -1,0 +1,9 @@
+**/node_modules/
+**/build/
+**/dist/
+**/.gradle/
+**/google-services.json
+**/local.properties
+**/signing.properties
+**/.env
+**/*.keystore

@@ -1,0 +1,70 @@
+> Task :preBuild UP-TO-DATE
+> Task :preReleaseBuild UP-TO-DATE
+> Task :mergeReleaseJniLibFolders
+> Task :mergeReleaseNativeLibs
+> Task :generateReleaseResources
+> Task :checkReleaseDuplicateClasses
+> Task :processReleaseGoogleServices
+> Task :packageReleaseResources
+> Task :processReleaseNavigationResources
+> Task :javaPreCompileRelease
+> Task :parseReleaseLocalResources
+> Task :checkReleaseAarMetadata
+> Task :mapReleaseSourceSetPaths
+> Task :generateReleaseRFile
+> Task :compileReleaseNavigationResources
+> Task :stripReleaseDebugSymbols
+> Task :compileReleaseKotlin NO-SOURCE
+> Task :extractReleaseNativeSymbolTables
+
+> Task :compileReleaseJavaWithJavac
+
+> Task :mergeReleaseNativeDebugMetadata NO-SOURCE
+Note: C:\Users\rosha\Downloads\new  fff\apk-builder\src\com\ffesports\tournament\MainActivity.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+> Task :createReleaseCompatibleScreenManifests
+> Task :extractDeepLinksRelease
+
+> Task :processReleaseMainManifest
+package="com.ffesports.tournament" found in source AndroidManifest.xml: C:\Users\rosha\Downloads\new  fff\apk-builder\AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="com.ffesports.tournament" from the source AndroidManifest.xml: C:\Users\rosha\Downloads\new  fff\apk-builder\AndroidManifest.xml.
+
+> Task :mergeReleaseResources
+> Task :processReleaseManifest
+> Task :desugarReleaseFileDependencies
+> Task :mergeReleaseStartupProfile
+> Task :generateReleaseAssets UP-TO-DATE
+> Task :mergeReleaseArtProfile
+> Task :mergeReleaseAssets
+> Task :compressReleaseAssets
+> Task :extractReleaseVersionControlInfo
+> Task :extractProguardFiles
+> Task :generateReleaseLintVitalReportModel
+> Task :processReleaseJavaRes NO-SOURCE
+> Task :collectReleaseDependencies
+> Task :mergeExtDexRelease
+> Task :sdkReleaseDependencyData
+> Task :validateSigningRelease
+> Task :writeReleaseAppMetadata
+> Task :writeReleaseSigningConfigVersions
+> Task :processReleaseManifestForPackage
+> Task :mergeReleaseJavaResource
+> Task :processReleaseResources
+> Task :dexBuilderRelease
+> Task :mergeReleaseGlobalSynthetics
+> Task :optimizeReleaseResources
+> Task :mergeDexRelease
+> Task :compileReleaseArtProfile
+> Task :lintVitalAnalyzeRelease
+> Task :lintVitalReportRelease
+> Task :lintVitalRelease
+> Task :packageRelease
+> Task :createReleaseApkListingFileRedirect
+> Task :assembleRelease
+
+[Incubating] Problems report is available at: file:///C:/Users/rosha/Downloads/new%20%20fff/apk-builder/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 43s
+48 actionable tasks: 48 executed
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.3.1/userguide/configuration_cache_enabling.html

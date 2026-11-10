@@ -1,0 +1,123 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() && 
+        (request.auth.token.admin == true || 
+         exists(/databases/$(database)/documents/adminUsers/$(request.auth.uid)));
+    }
+
+    // 1. Users collection
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow create: if isOwner(userId);
+      allow update: if isOwner(userId) && 
+        !request.resource.data.diff(resource.data).affectedKeys().hasAny(['role', 'isBanned']);
+      allow delete: if isAdmin();
+    }
+
+    // 2. Matches collection
+    match /matches/{matchId} {
+      // Anyone can read match listings
+      allow read: if true;
+      // Only admins or trusted backend can create/update/delete matches
+      allow write: if isAdmin();
+    }
+
+    // 3. Match Registrations
+    match /matchRegistrations/{regId} {
+      allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isAdmin());
+      // Direct registration writes forbidden - must be done via secure backend/Cloud Function atomic endpoint
+      allow write: if isAdmin();
+    }
+
+    // 4. Teams
+    match /teams/{teamId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated() && request.resource.data.leaderId == request.auth.uid;
+      allow update: if isAuthenticated() && (resource.data.leaderId == request.auth.uid || isAdmin());
+      allow delete: if isAdmin();
+    }
+
+    // 5. Tournaments
+    match /tournaments/{tourneyId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // 6. Wallets (CRITICAL: Client NEVER directly updates wallet balance!)
+    match /wallets/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      // Strictly NO CLIENT WRITES! Only Cloud Functions Admin SDK can write
+      allow write: if false;
+    }
+
+    // 7. Wallet Transactions (CRITICAL: Immutable ledger)
+    match /walletTransactions/{txId} {
+      allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isAdmin());
+      // Strictly NO CLIENT WRITES! Only Cloud Functions Admin SDK can write
+      allow write: if false;
+    }
+
+    // 8. Deposits
+    match /deposits/{depositId} {
+      allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow write: if false; // Only verified payment webhook can write
+    }
+
+    // 9. Withdrawals
+    match /withdrawals/{withdrawalId} {
+      allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isAdmin());
+      // Created via Cloud Function, admin can update status
+      allow write: if isAdmin();
+    }
+
+    // 10. Match Results
+    match /matchResults/{resultId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // 11. Notifications
+    match /notifications/{notifId} {
+      allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow update: if isAuthenticated() && resource.data.userId == request.auth.uid && 
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read']);
+      allow create, delete: if isAdmin();
+    }
+
+    // 12. Support Tickets
+    match /supportTickets/{ticketId} {
+      allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow update: if isAdmin();
+    }
+
+    // 13. App Settings
+    match /appSettings/{settingId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // 14. Admin Users
+    match /adminUsers/{adminId} {
+      allow read, write: if isAdmin();
+    }
+
+    // 15. Audit Logs
+    match /auditLogs/{logId} {
+      allow read: if isAdmin();
+      allow write: if false; // Append-only by server
+    }
+  }
+}

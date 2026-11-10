@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="grad-chrono" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="58" fill="url(#grad-chrono)" stroke="#67E8F9" stroke-width="4"/>
+  <!-- Cyber Visor & Head -->
+  <circle cx="60" cy="50" r="22" fill="#F0FDFA"/>
+  <rect x="42" y="44" width="36" height="10" rx="5" fill="#0891B2" stroke="#22D3EE" stroke-width="2"/>
+  <!-- Forcefield Time Shield Dome -->
+  <circle cx="60" cy="50" r="30" fill="none" stroke="#A5F3FC" stroke-width="2" stroke-dasharray="4 4"/>
+  <!-- High Tech Body Armor -->
+  <path d="M30 100 Q60 76 90 100 A58 58 0 0 1 30 100 Z" fill="#0F172A"/>
+  <circle cx="60" cy="90" r="6" fill="#22D3EE"/>
+</svg>

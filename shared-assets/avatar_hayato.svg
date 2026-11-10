@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="grad-hayato" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#991B1B"/>
+      <stop offset="100%" stop-color="#EF4444"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="58" fill="url(#grad-hayato)" stroke="#FCA5A5" stroke-width="4"/>
+  <!-- Samurai Topknot & Hair -->
+  <circle cx="60" cy="24" r="7" fill="#18181B"/>
+  <circle cx="60" cy="50" r="22" fill="#FEE2E2"/>
+  <path d="M38 46 Q60 28 82 46 Q80 34 60 30 Q40 34 38 46 Z" fill="#18181B"/>
+  <!-- Cybernetic Bandage & Scar -->
+  <line x1="50" y1="44" x2="56" y2="58" stroke="#DC2626" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Crossed Katanas on Armor -->
+  <path d="M30 100 Q60 76 90 100 A58 58 0 0 1 30 100 Z" fill="#18181B"/>
+  <line x1="45" y1="84" x2="75" y2="102" stroke="#E0E7FF" stroke-width="3" stroke-linecap="round"/>
+  <line x1="75" y1="84" x2="45" y2="102" stroke="#E0E7FF" stroke-width="3" stroke-linecap="round"/>
+</svg>
